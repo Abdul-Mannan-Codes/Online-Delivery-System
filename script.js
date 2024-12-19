@@ -4,6 +4,14 @@ const loadProducts = ()=> {
     }
 }
 document.addEventListener('DOMContentLoaded', ()=>{
-    console.log("Loaded")
     loadProducts();
+});
+document.addEventListener('scroll', (event)=>{
+    let nav = document.querySelector('nav');
+    if(window.scrollY > 300){
+        nav.classList.add('stick');
+    }
+    else{
+        nav.classList.remove('stick');
+    }
 });
