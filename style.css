@@ -115,3 +115,89 @@ footer a{
 footer a:hover{
     color:var(--danger2);
 }
+/*Media Query*/
+/* General Media Queries for Responsiveness */
+
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero-caption {
+        font-size: 24px;
+        padding: 10px;
+    }
+    .hero-name {
+        font-size: 50px;
+    }
+    #hero{
+        background-image: url(images/chakki1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .hero-img {
+        display: none; /* Hides the hero image on smaller screens for better visibility */
+    }
+    .service-img, .product-img {
+        height: 150px;
+        width: 150px;
+    }
+    .customer-img img {
+        height: 150px;
+        width: 150px;
+    }
+    /* .navlist {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    } */
+}
+
+/* For mobile phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar ul {
+        margin-top: 0;
+    }
+    .navbar a {
+        font-size: 16px;
+    }
+    .hero-caption {
+        padding: 20px;
+    }
+    .hero-name {
+        font-size: 36px;
+    }
+    .service, .products {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-img {
+        height: 120px;
+        width: 120px;
+    }
+    .customer-img img {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+/* For small mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-caption h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .hero-caption p {
+        font-size: 14px;
+        text-align: center;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .service-name h5, .product-name h5 {
+        font-size: 14px;
+    }
+    .navlist {
+        font-size: 12px;
+    }
+}
+
