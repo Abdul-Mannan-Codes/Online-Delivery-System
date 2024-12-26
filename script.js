@@ -3,6 +3,7 @@ const quantityPara = document.querySelector('#qpara');
 const phone = document.querySelector('#phone');
 const otp = document.querySelector('#otp');
 const orderBtn = document.querySelector('#order-btn');
+const stars = document.querySelectorAll('.stars .fa-star');
 let OTP = '1234';
 const loadProducts = ()=> {
     for(let i=1;i<=6;i++){
@@ -74,3 +75,35 @@ otp.addEventListener('input',(event)=>{
         orderBtn.disabled = !false;
     }
 });
+for(let star of stars){
+    star.addEventListener('click',(event)=>{
+        let starCount = parseInt(star.id.replace('star',''));
+        let review = document.querySelector('#review-mark');
+        for(let i=0;i<stars.length;i++){
+            let s = document.querySelector(`#star${i+1}`);
+            if(i+1 <= starCount){
+                s.style.color = 'rgb(32, 231, 165)';
+                s.style.textShadow = '0px 0px 10px rgb(32,231,165)';
+            }
+            else{
+                s.style.color = '#fae3b8';
+                s.style.textShadow = 'none';
+            }
+        }
+        if(starCount == 1){
+            review.textContent = "Poor";
+        }
+        else if(starCount == 2){
+            review.textContent = "Not so good";
+        }
+        else if(starCount == 3){
+            review.textContent = "Good";
+        }
+        else if(starCount == 4){
+            review.textContent = "Very Good";
+        }
+        else if(starCount == 5){
+            review.textContent = "Excellent";
+        }
+    })
+}

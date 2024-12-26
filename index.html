@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-One Fresh Chakki Aata</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/A-ONE.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,7 @@
 <body>
     <nav>
         <div class="navbar d-flex justify-content-center">
+            <img src="images/A-ONE.png" alt="A-ONE Logo" width="60" id="logo">
             <ul class="navlist d-flex justify-content-center gap-5">
                 <a href="#hero"><li class="nav-item">Home</li></a>
                 <a href="#product"><li class="nav-item">Products</li></a>
@@ -28,7 +30,7 @@
                 <div class="hero-caption col-6 d-flex justify-content-center align-items-start flex-column ps-5">
                     <h1 class="text-uppercase hero-name">a-one fresh chakki aata</h1>
                     <p>Pure Flour, Pure Health - Freshly Milled for Your Family's Happiness!</p>
-                    <button class="text-uppercase btn btn-danger">order now</button>
+                    <a href="#order"><button class="text-uppercase btn btn-danger">order now</button></a>
                 </div>
                 <div class="hero-img col-6"></div>
             </div>
@@ -183,27 +185,107 @@
             <h1 class="text-center mb-5">Place Your Order</h1>
             <div class="order-container d-flex justify-content-center align-items-center">
                 <form action="" name="order-form" class="order-form d-flex justify-content-center align-items-start flex-column gap-3 p-5">
-                    <div class="input">
-                       <label for="">Name</label>  <input type="text" id="name" placeholder="Ex: Kashif Shaikh" required>
+                    <div class="input d-flex">
+                       <label for="">Name</label>  
+                       <div class="d-flex flex-column">
+                            <input type="text" id="name" placeholder="Ex: Kashif Shaikh" required>
+                            <p id="name-error" class="invalid-text d-none">Invalid Name</p>
+                        </div>
+                    </div>
+                    <div class="input d-flex">
+                        <label for="">Address</label>  
+                        <div class="d-flex flex-column">
+                            <input type="text" id="address" placeholder="Room No, Bldg name, Area" required>
+                            <p id="address-error" class="invalid-text d-none">Invalid Address</p>
+                        </div>
                     </div>
                     <div class="input">
-                        <label for="">Address</label>  <input type="text" id="address" placeholder="Room No, Bldg name, Area" required>
+                        <label for="">Select Aata</label> 
+                        <select id="aata-type">
+                            <option value="">Gehu</option>
+                            <option value="">Chaawal</option>
+                            <option value="">Jawari</option>
+                            <option value="">Bajri</option>
+                            <option value="">Besan</option>
+                            <option value="">Makai</option>
+                            <option value="">Nachni</option>
+                        </select>
                     </div>
-                    <div class="input">
-                        <label for="">Quantity</label>  <input class="ps-0" type="range" id="quantity" step="10" value="0" required>
+                    <div class="input flex">
+                        <label for="">Quantity</label>  
+                        <div class="d-flex flex-column">
+                            <input class="ps-0" type="range" id="quantity" step="10" value="0" required>
+                            <p id="quantity-error" class="invalid-text d-none">Invalid Quanity</p>
+                        </div>
                         <p id="qpara">0KG</p>
                     </div>
-                    <div class="input">
-                        <label for="">Phone No</label> <input type="text" id="phone" placeholder="9876543210" required>
-                        <button class="btn btn-danger" id="otp-btn">Send OTP</button>
+                    <div class="input d-flex">
+                        <label for="">Phone No</label> 
+                        <div class="d-flex flex-column">
+                            <input type="text" id="phone" placeholder="9876543210" required>
+                            <p id="phone-error" class="invalid-text d-none">Invalid Phone Number</p>
+                            <button class="btn btn-danger mt-2" id="otp-btn">Send OTP</button>
+                        </div>
+                        
                     </div>
-                    <div class="d-none otp-div">
+                    <div class="d-none otp-div input">
                         <label for="otp"></label> <input type="text" id="otp" required>
                     </div>
                     <div class="input">
                         <input type="submit" value="Order" id="order-btn" class="text-uppercase" disabled>
                     </div>
                 </form>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="pt-4 border-top border-secondary mb-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Contact Us</h1>
+            <div class="contact-div  d-flex justify-content-center align-items-start gap-5">
+                <div class="contact-type">
+                    <div class="contact-title">
+                        <h5 class="contact-name">Phone</h5>
+                        <h3 class="contact-icon"> <i class="fa-solid fa-phone"></i> </h3>
+                    </div>
+                    <div class="contact-detail">
+                        <p>Mr Noor Muhammad : <br> <a href="+9186938 81424">+91 86938 81424</a></p>
+                        <p>Mr Kashif : <br> <a href="+9197024 08774">+91 97024 08774</a></p>
+                    </div>
+                </div>
+                <div class="contact-type">
+                    <div class="contact-title">
+                        <h5 class="contact-name">Address</h5>
+                        <h3 class="contact-icon"> <i class="fa-solid fa-location-dot"></i> </h3>
+                    </div>
+                    <div class="contact-detail">
+                        <p>Saif Apt, Chand Nagar Road, near Kohinoor Masjid, Nasheman Colony, Kausa, Mumbra, Maharashtra 400612</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.53565384313703!2d73.02627724304917!3d19.17027064591411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bfb5ecaced83%3A0xa73cbe5298df5383!2sA-One%20Fresh%20Chakki%20Atta%20(100%25%20Pure%20and%20Fresh)!5e0!3m2!1sen!2sin!4v1735239757838!5m2!1sen!2sin" width="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contact-type">
+                    <div class="contact-title">
+                        <h5 class="contact-name">Feedback</h5>
+                        <h3 class="contact-icon"> <i class="fa-solid fa-comment"></i> </h3>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="feedback-form">
+                            <form action="">
+                                <div class="stars d-flex ps-1 gap-2">
+                                    <i class="fa-solid fa-star" id="star1"></i>
+                                    <i class="fa-solid fa-star" id="star2"></i>
+                                    <i class="fa-solid fa-star" id="star3"></i>
+                                    <i class="fa-solid fa-star" id="star4"></i>
+                                    <i class="fa-solid fa-star" id="star5"></i>
+                                </div>
+                                <p class="ps-1" id="review-mark"></p>
+                                <div class="feedback-comment input">
+                                    <textarea placeholder="Write your review here..." id="feedback" style="resize:none; padding-left:8px;" rows="5" cols="25"></textarea>
+                                </div>
+                                <button class="btn btn-danger">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
